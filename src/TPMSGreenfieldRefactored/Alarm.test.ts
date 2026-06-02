@@ -2,7 +2,7 @@ import { Alarm } from "./Alarm";
 import { ISensor } from "./Sensor";
 
 describe("Tire Pressure Alarm (Greenfield Abstraction)", () => {
-  it("Alarm_WhenPressureIsBelowThreshold_TurnsAlarmOn", () => {
+  it("alarm, when pressure is below threshold, turns the alarm on", () => {
     // 1. ARRANGE
     // We create a simple, lightweight stub that satisfies the ISensor interface
     const stubSensor: ISensor = {
@@ -19,7 +19,7 @@ describe("Tire Pressure Alarm (Greenfield Abstraction)", () => {
     expect(alarm.isAlarmOn).toBe(true);
   });
 
-  it("Alarm_WhenPressureIsWithinNormalRange_DoesNotTurnAlarmOn", () => {
+  it("alarm, when pressure is within the normal range, does not turn the alarm", () => {
     const stubSensor: ISensor = {
       popNextPressurePsiValue: () => 19, // Normal range
     };
